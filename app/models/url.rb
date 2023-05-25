@@ -1,9 +1,8 @@
 class Url < ApplicationRecord
+  before_validation :set_short_url
   validates :long_url, :short_url, presence: true
   validates :short_url, uniqueness: true
   validates_format_of :long_url, :with => /\A(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?\Z/i
-
-  before_validation :set_short_url
 
   private
 

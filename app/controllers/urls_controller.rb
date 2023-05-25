@@ -1,5 +1,6 @@
 class UrlsController < ApplicationController
   def index
+    @url = Url.new
   end
 
   def show
@@ -11,7 +12,7 @@ class UrlsController < ApplicationController
     if @url.save
       redirect_to show_routes_path(@url.id)
     else
-      render "index"
+      render action: :index
     end
   end
 

@@ -1,6 +1,6 @@
 <h1>Short Me</h1>
 
-<%= form_for Url.new, url: urls_path do |f| %>
+<%= form_for @url, url: urls_path do |f| %>
   <%= f.text_field :long_url %>
   <%= f.submit %>
 <% end %>
